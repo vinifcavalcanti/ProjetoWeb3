@@ -36,3 +36,38 @@ const desconto = 0.15; //15%
 const precoFinal = precoProduto* (1- desconto);
 console.log(precoFinal);
 console.log(`R$ ${precoFinal.toFixed(2)}`)
+
+//DOM (Document Object Model) Modelo de docmento
+//Permite o JS conversar com o navegador
+//Para manipular o HTML e CSS
+
+const titulo = document.getElementById("titulo");
+titulo.innerText = "DOM transformando o texto";
+titulo.style.color = "blue";
+
+
+const produtos = [
+    {nome: "Teclado Gamer", preco: 200, emPromocao:true},
+    {nome: "Mouse Gamer", preco: 150, emPromocao:false},
+    {nome: "Monitor", preco: 1300, emPromocao:true},
+    {nome: "Pad Mouse", preco: 50, emPromocao:false},
+];
+
+console.log(produtos)
+const container = document.getElementById("lista-produtos");
+
+function produtosCard(lista){
+    const htmlProdutos = lista.map(item => `
+        <div class="card">
+            <h3>${item.nome}</h3>
+            <p>Preço R$ ${item.preco}</p>
+            ${item.emPromocao ? '<span>Promoção</span>' : ''}
+        </div>
+        `).join(""); //Transforma o array em uma única string
+
+        container.innerHTML = htmlProdutos;
+} 
+produtosCard();
+//Callback, função chama outra função
+//map é uma função de array
+
