@@ -26,5 +26,13 @@ console.log(texto2);
 //Split transforma o texto em array []
 
 //O Join faz o inverso, ele junta tudo em uma unica string
-const texto3 = texto2.join(" ");
+const texto3 = texto2.join("");
 console.log(texto3)
+
+//Método tofixed
+
+const precoProduto = 199.99;
+const desconto = 0.15; //15%
+const precoFinal = precoProduto* (1- desconto);
+console.log(precoFinal);
+console.log(`R$ ${precoFinal.toFixed(2)}`)
