@@ -67,7 +67,7 @@ function produtosCard(lista){
 
         container.innerHTML = htmlProdutos;
 } 
-produtosCard();
+produtosCard(produtos);
 //Callback, função chama outra função
 //map é uma função de array
 
