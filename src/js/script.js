@@ -55,8 +55,10 @@ const produtos = [
 
 console.log(produtos)
 const container = document.getElementById("lista-produtos");
+const mostarTotal = document.getElementById("resultado-total")
 
 function produtosCard(lista){
+    mostarTotal.innerHTML = "";
     const htmlProdutos = lista.map(item => `
         <div class="card">
             <h3>${item.nome}</h3>
@@ -67,7 +69,22 @@ function produtosCard(lista){
 
         container.innerHTML = htmlProdutos;
 } 
-produtosCard(produtos);
+//produtosCard(produtos);
 //Callback, função chama outra função
 //map é uma função de array
 
+//Filter - Cria uma nova lista apenas com o que pesquisar
+
+function filtrarPromocoes(){
+    const promocionais = produtos.filter(item => item.emPromocao);
+    produtosCard(promocionais);
+}
+
+//Reduce - Reduz o array em um unico valor(soma de proços)
+
+function calcularTotal(){
+    const total = produtos.reduce((acumulador, item) => {
+        return acumulador + item.preco;
+    },0);
+    mostarTotal.innerText = `Valor Total R$ ${total}`;
+}

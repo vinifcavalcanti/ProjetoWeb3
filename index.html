@@ -7,9 +7,16 @@
 </head>
 <body>
     <main class="container">
-    <h1 id="titulo">Título</h1>
+        <h1 id="titulo">Título</h1>
+        <div class="btns">
+            <button onclick="produtosCard(produtos)">Mostrar Tudo (Map)</button>
+            <button onclick="filtrarPromocoes()">Apenas Promoções (Filter)</button>
+            <button onclick="calcularTotal()">Calcular Total (Reduce)</button>
+        </div>
 
-    <div id="lista-produtos" class="grid"></div>
+        <div id="lista-produtos" class="grid"></div>
+
+        <h2 id="resultado-total"> </h2>
     </main>
     <!-- JS EXTERNO -->
      <script src="src/js/script.js"></script>
